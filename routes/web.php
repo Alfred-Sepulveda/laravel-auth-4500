@@ -44,8 +44,8 @@ Route::get('/callback', function (Request $request) {   //Get Token after author
  
         $response = Http::asForm()->post('https://laravel-auth-4500.herokuapp.com/oauth/token', [
             'grant_type' => 'authorization_code',
-            'client_id' => '5',
-            'client_secret' => 'EeJa21lhgMbhHhUsgNINhzgjRnG9DYDybuGCF57R',
+            'client_id' => '8',
+            'client_secret' => 'OPpU9C0OjRMRMWz1lPnQAuLInyzrUogZeWej7UUB',
             'redirect_uri' => 'https://laravel-auth-4500.herokuapp.com/callback',
             'code' => $request->code,
         ]);
