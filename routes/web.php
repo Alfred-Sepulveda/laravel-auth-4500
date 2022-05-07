@@ -28,9 +28,9 @@ Route::get('/authorization', function (Request $request) {  //Get authorization
     $request->session()->put('state', $state = Str::random(40));
  
     $query = http_build_query([
-        'client_id' => '5',
-        'redirect_uri' => 'https://laravel-auth-4500.herokuapp.com/api-auth/callback',
-        'response_type' => 'EeJa21lhgMbhHhUsgNINhzgjRnG9DYDybuGCF57R',
+        'client_id' => '3',
+        'redirect_uri' => 'https://laravel-auth-4500.herokuapp.com/auth/callback',
+        'response_type' => 'icjeYcwZPMVdiHoms0b3crGpJOyxYyrYANQmG3IY',
         'scope' => '',
         'state' => $state,
     ]);
@@ -45,9 +45,9 @@ Route::get('/callback', function (Request $request) {   //Get Token after author
  
         $response = Http::asForm()->post('https://laravel-auth-4500.herokuapp.com/oauth/token', [
             'grant_type' => 'authorization_code',
-            'client_id' => '5',
-            'client_secret' => 'EeJa21lhgMbhHhUsgNINhzgjRnG9DYDybuGCF57R',
-            'redirect_uri' => 'https://laravel-auth-4500.herokuapp.com/api-auth/callback',
+            'client_id' => '3',
+            'client_secret' => 'icjeYcwZPMVdiHoms0b3crGpJOyxYyrYANQmG3IY',
+            'redirect_uri' => 'https://laravel-auth-4500.herokuapp.com/auth/callback',
             'code' => $request->code,
         ]);
         
