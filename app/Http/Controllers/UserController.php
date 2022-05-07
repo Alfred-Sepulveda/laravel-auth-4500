@@ -1,6 +1,14 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
 use App\Models\User;
 
-public function index() {
+class UserController extends Controller
+{
+    public function index() {
       $users = User::all();
       return json_encode($users);
     }
+}
