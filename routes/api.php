@@ -2,6 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,3 +22,5 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 if (env('APP_ENV') ==='local'){
     URL::forceScheme('https');
 }
+
+Route::get('/users', [UserController::class, 'index'])->middleware('auth:api');
