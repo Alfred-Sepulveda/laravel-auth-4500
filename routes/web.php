@@ -65,3 +65,11 @@ Route::get('/callback', function (Request $request) {   //Get Token after author
         return redirect()->route('authorization');
     }
 });
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
