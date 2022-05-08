@@ -28,7 +28,7 @@ Route::get('/authorization', function (Request $request) {  //Get authorization
  
     $query = http_build_query([
         'client_id' => '10',
-        'redirect_uri' => 'https://laravel-auth-4500.herokuapp.com/callback',
+        'redirect_url' => 'https://laravel-auth-4500.herokuapp.com/callback',
         'response_type' => 'code',
         'scope' => '',
         'state' => $state,
@@ -46,7 +46,7 @@ Route::get('/callback', function (Request $request) {   //Get Token after author
             'grant_type' => 'authorization_code',
             'client_id' => '10',
             'client_secret' => 'WsKPyQ296Vwc1KnXVNW41Bsoz89LvWxFbF60YYo1',
-            'redirect_uri' => 'https://laravel-auth-4500.herokuapp.com/callback',
+            'redirect_url' => 'https://laravel-auth-4500.herokuapp.com/callback',
             'code' => $request->code,
         ]);
         
